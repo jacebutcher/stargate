@@ -1,5 +1,4 @@
-
-# STARGATE PLATFORM
+Platform# STARGATE PLATFORM
 Developed by ACTS - 2024 ©
 
 The Stargate platform interacts with the Stargate API to perform 5 essential functions that assist astronauts in excelling their career:
@@ -20,13 +19,13 @@ API Usage:
 (https://stargateapi.azurewebsites.net/swagger/index.html)
 
 ## Demo
-https://github.com/jacebutcher/stargate/assets/114118425/ad93e7e1-a28c-4db8-bd04-80d042a95ae8
+https://github.com/jacebutcher/stargate/assets/114118425/52d29ca4-47b0-4e41-9e79-1d8162fe7fae
 
 ## Tech Stack
 
 **API:** React.js, C#, ASP.NET Core, MySQL
 
-**Host:** Azure (platform and API), AWS (database)
+**Host:** Azure (Web App, API, and MySQL DB)
 
 ## Authors
 
