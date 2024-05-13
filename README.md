@@ -20,7 +20,7 @@ API Usage:
 (https://stargateapi.azurewebsites.net/swagger/index.html)
 
 ## Demo
-https://github.com/jacebutcher/stargate/assets/114118425/b851bbb6-0421-4a7a-b20f-bd834bba8ffe
+https://github.com/jacebutcher/stargate/assets/114118425/ad93e7e1-a28c-4db8-bd04-80d042a95ae8
 
 ## Tech Stack
 
