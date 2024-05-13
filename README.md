@@ -19,17 +19,14 @@ Navigate to the link below to access the platform:
 API Usage:
 (https://stargateapi.azurewebsites.net/swagger/index.html)
 
+## Demo
+https://github.com/jacebutcher/stargate/assets/114118425/b851bbb6-0421-4a7a-b20f-bd834bba8ffe
 
 ## Tech Stack
 
 **API:** React.js, C#, ASP.NET Core, MySQL
 
 **Host:** Azure (platform and API), AWS (database)
-
-
-## Demo
-Video Demo:
-(https://stargateapi.azurewebsites.net/swagger/index.html)
 
 ## Authors
 
