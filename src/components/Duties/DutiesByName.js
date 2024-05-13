@@ -6,6 +6,7 @@ import React from 'react';
 import DutiesTable from '../Tables/DutiesTable';
 import logo from './../../world.gif'
 import TextField from '@mui/material/TextField';
+import { fetchDutiesByName } from './../../api/api.js'
 
 export default function DutiesByName() {
 
@@ -32,18 +33,8 @@ export default function DutiesByName() {
             setLoading(false);
         } else {
             try {
-                const response = await fetch(`https://stargateapi.azurewebsites.net/AstronautDuty/${name}`, {
-                    mode: "cors",
-                    method: "GET"
-                });
-                if (!response.ok) {
-                    setIsError(true);
-                    setError('Failed to fetch data');
-                    throw new Error('Failed to fetch data');
-                } else {
-                    const data = await response.json();
-                    setRows(data.astronautDuties);  // set to astronautDuties, not People
-                }
+                const duties = await fetchDutiesByName(name);
+                setRows(duties);
             } catch (error) {
                 setIsError(true);
                 setError('No data found.');

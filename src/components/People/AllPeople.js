@@ -1,35 +1,24 @@
-import './../../styles/PersonByName.css';
+import React, { useState } from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Starfield from 'react-starfield';
-import React from 'react';
 import PeopleTable from '../Tables/PeopleTable';
-import logo from './../../world.gif'
-
+import logo from './../../world.gif';
+import { fetchAllPeople } from './../../api/api.js'
 
 export default function AllPeople() {
-
-    const [loading, setLoading] = React.useState(false);
-    const [rows, setRows] = React.useState([])
+    const [loading, setLoading] = useState(false);
+    const [rows, setRows] = useState([]);
 
     const handleSubmit = async () => {
-        setLoading(true); // Set loading to true when starting the request
-    
+        setLoading(true);
         try {
-            const response = await fetch(`https://stargateapi.azurewebsites.net/Person/`, {
-                mode: "cors",
-                method: "GET"
-            });
-            if (!response.ok) {
-                throw new Error('Failed to fetch data');
-            } else {
-                const data = await response.json();
-                setRows(data.people); // Update rows with the fetched data
-            }
+            const data = await fetchAllPeople();
+            setRows(data);
         } catch (error) {
-            console.error('Error fetching data:', error);
+            // TODO: include error handling (should only be when API/DB is down
         } finally {
-            setLoading(false); // Set loading to false when request completes
+            setLoading(false); 
         }
     };
 
@@ -48,7 +37,7 @@ export default function AllPeople() {
                 {loading && <img style={{ alignSelf: 'center' }} width={50} height={50} src={logo} alt="loading..." />}
                 {loading && <div className={"loading"}>Fetching data from API.....</div>}
                 <Stack className="stack" spacing={5} direction="column">
-                <Button onClick={handleSubmit} style={{maxWidth: '140px', maxHeight: '60px', minWidth: '140px', minHeight: '60px'}} sx={{ backgroundColor: "green", color: "white"}} className="option-button" variant="contained">SUBMIT</Button>
+                    <Button onClick={handleSubmit} style={{maxWidth: '140px', maxHeight: '60px', minWidth: '140px', minHeight: '60px'}} sx={{ backgroundColor: "green", color: "white"}} className="option-button" variant="contained">SUBMIT</Button>
                 </Stack>
                 <Stack className="stack" spacing={5} direction="column"> <PeopleTable rows={rows}></PeopleTable></Stack>
                 <Stack className="stack" spacing={5} direction="column">

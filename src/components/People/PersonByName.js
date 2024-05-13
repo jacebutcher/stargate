@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import React from 'react';
 import PeopleTable from '../Tables/PeopleTable';
 import logo from './../../world.gif'
+import { fetchPersonByName } from './../../api/api.js'
 
 export default function PersonByName() {
 
@@ -20,37 +21,25 @@ export default function PersonByName() {
     }
 
     const handleSubmit = async (name) => {
-        // initialize 
-        setRows([]);
         setLoading(true);
         setIsError(false);
         setError("");
+        setRows([]);
 
-        console.log(name);
-        if (name === "") { // validate parameter
+        if(name === ""){
             setIsError(true);
-            setError("Error: Name field empty.");
+            setError("Must Provide Name.");
             setLoading(false);
         } else {
             try {
-                const response = await fetch(`https://stargateapi.azurewebsites.net/Person/${name}`, {
-                    mode: "cors",
-                    method: "GET"
-                });
-                if (!response.ok) {
-                    setIsError(true);
-                    setError('Failed to fetch data');
-                    throw new Error('Failed to fetch data');
-                } else {
-                    const data = await response.json();
-                    setRows([data.person]); // only one person
-                }
+                const person = await fetchPersonByName(name);
+                setRows([person]);
             } catch (error) {
                 setIsError(true);
-                setError('No data found.');
-                console.error('Error fetching data:', error);
+                setError("No data returned.");
+                setLoading(false);
             } finally {
-                setLoading(false); // loading is done
+                setLoading(false);
             }
         }
     };
