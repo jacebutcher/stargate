@@ -14,7 +14,7 @@ The Stargate platform interacts with the Stargate API to perform 5 essential fun
 ## Usage
 
 Navigate to the link below to access the platform:
-(https://stargateapi.azurewebsites.net/swagger/index.html)
+([https://stargateapi.azurewebsites.net/swagger/index.html](https://stargateplatform.azurewebsites.net/))
 
 API Usage:
 (https://stargateapi.azurewebsites.net/swagger/index.html)
