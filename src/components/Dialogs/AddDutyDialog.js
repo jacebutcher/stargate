@@ -20,34 +20,15 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 export default function AddDutyDialog({personId, rank, dutyTitle, dutyStartDate, dutyEndDate}) {
   const [open, setOpen] = React.useState(false);
-  const [ID, setID] = React.useState(0);
-  const [currentRank, setCurrentRank] = React.useState("");
-  const [currentDutyTitle, setCurrentDutyTitle] = React.useState("");
-  const [startDate, setStartDate] = React.useState("");
-  const [endDate, setEndDate] = React.useState("");
 
-  const handleSubmit = (name) => {
-    // make API call
-
-    // set field values
-    //setFieldValues(); 
-
-    setOpen(true);
-  };
+  // TODO: implement api call and show success/failure dialog
   const handleClose = () => {
     setOpen(false);
-  };
-  const setFieldValues = (id, rank, duty, start, end) => {
-    setID(id);
-    setCurrentRank(rank);
-    setCurrentDutyTitle(duty);
-    setStartDate(start);
-    setEndDate(end);
   };
 
   return (
     <React.Fragment>
-      <Button style={{maxWidth: '140px', maxHeight: '60px', minWidth: '140px', minHeight: '60px'}} sx={{ backgroundColor: "green", color: "white"}} variant="outlined" onClick={handleSubmit}>
+      <Button style={{maxWidth: '140px', maxHeight: '60px', minWidth: '140px', minHeight: '60px'}} sx={{ backgroundColor: "grey", color: "white"}} variant="outlined">
         SUBMIT
       </Button>
       <BootstrapDialog
@@ -76,7 +57,7 @@ export default function AddDutyDialog({personId, rank, dutyTitle, dutyStartDate,
           </Typography>
         </DialogContent>
         <DialogActions>
-          <Button sx={{ backgroundColor: "green", color: "white"}} autoFocus onClick={handleClose}>
+          <Button sx={{ backgroundColor: "grey", color: "white"}} autoFocus onClick={handleClose}>
             Close
           </Button>
         </DialogActions>

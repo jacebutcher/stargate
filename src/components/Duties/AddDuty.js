@@ -79,6 +79,7 @@ export default function AddDuty() {
                 <Stack className="stack" spacing={5} direction="column">
                     <AddDutyDialog id={id} rank={rank} dutyTitle={dutyTitle} dutyStartDate={dutyStartDate} dutyEndDate={dutyEndDate}></AddDutyDialog>
                 </Stack>
+                <div style={{ color: 'red', marginTop: 20 }}>{'NOTE: This is a preview of this screen. Functionality will be implemented soon.'}</div>
                 <Stack className="stack" spacing={5} direction="column">
                     <Button href="/Options" sx={{ backgroundColor: "white", color: "black" }} className="option-button" variant="contained">MENU</Button>
                 </Stack>

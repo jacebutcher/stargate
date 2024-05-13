@@ -19,13 +19,11 @@ function Options() {
         <Stack className="stack" spacing={3} direction="row">
       <Button href="/PersonByName" color="success" variant="contained">Retrieve a person by name</Button>
       <Button href="/AllPeople" color="success" variant="contained">Retrieve all people</Button>
-      <Button href="/AddUpdatePerson" color="success" variant="contained">Add/Update a person by name</Button>
       <Button href="/DutiesByName" color="success" variant="contained">Retrieve Astronaut Duties by name</Button>
-      <Button href="/AddDuty" color="success" variant="contained">Add an Astronaut Duty</Button>
+      <Button href="/AddUpdatePerson" sx={{ backgroundColor: "grey", color: "white" }} variant="contained">Add/Update a person by name</Button>
+      <Button href="/AddDuty" sx={{ backgroundColor: "grey", color: "white" }} variant="contained">Add an Astronaut Duty</Button>
     </Stack>
-    <Stack spacing={5} direction="column">
-      <Button href="/" sx={{backgroundColor: "white", color: "black"}} className = "option-button" variant="contained">HOME</Button>
-    </Stack>
+      <Button style={{float: 'right'}} href="/" sx={{backgroundColor: "white", color: "black"}} className = "option-button" variant="contained">HOME</Button>
       </header>
     </div>
   );

@@ -18,32 +18,26 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export default function AddUpdatePersonDialog({personId, name}) {
+export default function AddUpdatePersonDialog({isSuccess}) {
 
-  const handleSubmit = (name) => {
+  const [open, setOpen] = React.useState(false);
+
+  // TODO: implement api call and show success/failure dialog
+  //const handleSubmit = (name) => {
     // make API call
 
     // set field values
     //setFieldValues(); 
 
-    setOpen(true);
-  };
+    //setOpen(true);
+  //};
+
   const handleClose = () => {
     setOpen(false);
-  };
-  const setFieldValues = (id, rank, duty, start, end) => {
-    setID(id);
-    setCurrentRank(rank);
-    setCurrentDutyTitle(duty);
-    setStartDate(start);
-    setEndDate(end);
   };
 
   return (
     <React.Fragment>
-      <Button style={{maxWidth: '140px', maxHeight: '60px', minWidth: '140px', minHeight: '60px'}} sx={{ backgroundColor: "green", color: "white"}} variant="outlined" onClick={handleSubmit}>
-        SUBMIT
-      </Button>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -66,7 +60,8 @@ export default function AddUpdatePersonDialog({personId, name}) {
         </IconButton>
         <DialogContent dividers>
           <Typography gutterBottom>
-            ID: {personId}
+          {isSuccess && 'Person successfully added/updated!'}
+          {!isSuccess && 'Error updating/adding person.'}
           </Typography>
         </DialogContent>
         <DialogActions>
