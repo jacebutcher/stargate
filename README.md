@@ -1,4 +1,4 @@
-Platform# STARGATE PLATFORM
+# STARGATE PLATFORM
 Developed by ACTS - 2024 ©
 
 The Stargate platform interacts with the Stargate API to perform 5 essential functions that assist astronauts in excelling their career:
